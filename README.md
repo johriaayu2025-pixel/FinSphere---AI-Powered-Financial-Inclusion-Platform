@@ -110,6 +110,8 @@ AI Models	Hugging Face Transformers (DistilBERT/BERT-base-uncased)
 Data Storage	JSON / localStorage (mock), Supabase (SaaS API)
 Security	Secure local storage, mock data encryption
 APIs	Open Banking API, SaaS /finance-insights, OpenAI/Gemini (fraud detection)
+
+
 🧩 Project Highlights
 
 Explainable AI Credit Scoring (XAI)
