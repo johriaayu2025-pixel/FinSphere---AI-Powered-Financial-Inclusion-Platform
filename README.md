@@ -1,124 +1,143 @@
-FinSphere — AI-Powered Financial Inclusion & Intelligent Credit Ecosystem
-🚀 Datathon 2K25 — Final Round Submission
+💸 FinSphere — AI-Powered Financial Inclusion Platform
+🧠 DATATHON 2K25 — Final Round Submission
 
-Theme: “AI-Powered Financial Inclusion & Intelligent Credit Ecosystem for the Next Billion Users”
+Theme: AI-Powered Financial Inclusion & Intelligent Credit Ecosystem for the Next Billion Users
 
-Team: EmpowerNet
-Track: Fintech / AI for Financial Inclusion
+🌍 Overview
 
-🌍 Problem Statement
+FinSphere is an end-to-end AI-powered fintech platform designed to promote financial inclusion for freelancers, students, farmers, and gig workers who are often excluded by traditional banking systems.
 
-Over 13 billion people in emerging markets still lack access to formal financial systems.
-Traditional banking relies heavily on credit scores, salary slips, and documents, leaving out freelancers, gig workers, students, farmers, and small business owners.
+It uses alternative data, AI/ML models, and explainable insights to build trust, offer fair credit access, and empower financial literacy for the next billion users.
 
-FinSphere bridges this gap by using AI and non-traditional data to assess creditworthiness, promote financial literacy, and provide smart, personalized financial guidance.
+⚙️ Core Modules
+1️⃣ Alternative Credit Scoring Engine
 
-💡 Our Solution — FinSphere
+Uses non-traditional data (UPI patterns, spending behavior, mobile usage) to estimate creditworthiness.
 
-A futuristic, AI-powered financial ecosystem that offers:
+Integrates pretrained models (DistilBERT, BERT-base-uncased) fine-tuned on:
 
-🔹 1. Alternative Credit Scoring Engine
+Financial PhraseBank
 
-Uses non-traditional digital data such as:
+Credit Risk Dataset (Kaggle)
 
-UPI & payment patterns
+Provides Explainable AI (XAI) output — “Why this person got this score?”
 
-SMS metadata and transaction messages
+2️⃣ Smart Personal Finance Dashboard
 
-Online spending and bill payment behavior
+Tracks income, expenses, and savings
 
-Device usage trends
+Generates AI-driven insights and dynamic “Financial Health Index”
 
-✅ Output: Predicts creditworthiness using an ML model and visualizes user credit health through interactive charts.
+Shows graphs, recommendations, and personalized advice
 
-🔹 2. AI Financial Mentor (Chatbot)
+Allows users to input:
 
-A multilingual AI chatbot (English + Hindi) that acts as a personal financial guide.
-Users can ask:
+Mood/stress levels
 
-“How do I improve my credit score?”
-“Where can I invest ₹5000 safely?”
+Spending habits
 
-The chatbot provides personalized financial tips and spending insights.
+Savings goals
+→ Updates insights dynamically
 
-🔹 3. Fraud Detection & Risk Intelligence
+3️⃣ AI Financial Mentor / Chatbot
 
-AI-powered fraud prevention simulation that:
+Acts as a personal finance guide in local languages
 
-Flags suspicious transactions
+Explains loans, EMIs, and investment options
 
-Assigns a risk score
+Lightweight design supports offline/rural use cases
 
-Provides actionable alerts for safer financial behavior
+4️⃣ Fraud Detection & Risk Intelligence
 
-🔹 4. Smart Personal Finance Dashboard
+Detects fake KYCs, money laundering, or suspicious spending
 
-A sleek, interactive dashboard showing:
+Optionally integrates OpenAI or Gemini API for text-based fraud detection (“Is this SMS or message fraudulent?”)
 
-Monthly spending trends
+Displays real-time static alerts or anomaly cards in dashboard
 
-Category-wise expenses
+5️⃣ SaaS API Layer (Open Banking)
 
-AI-generated insights (“Your food spending rose by 20% this month”)
+Your platform also acts as a service layer (API) that banks or NBFCs can plug into:
 
-Savings goals & progress
+🔗 Endpoint:
+https://hywuddqzrlcvbxvurpoh.supabase.co/functions/v1/finance-insights
 
-🔹 5. Financial Literacy Gamification
+🧩 Example Request (Test in Console or ReqBin):
+fetch('https://hywuddqzrlcvbxvurpoh.supabase.co/functions/v1/finance-insights', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ userId: 'demo-user-123' })
+})
+.then(r => r.json())
+.then(data => console.log(data))
 
-A fun game-based learning zone where users:
+✅ Example Response:
+{
+  "user_id": "demo-user-123",
+  "risk_score": 0.86,
+  "financial_wellness_summary": "Strong credit behavior detected",
+  "analysis": {
+    "spending_trend": "stable",
+    "savings_rate": "healthy",
+    "credit_utilization": "optimal",
+    "bill_payment_history": "excellent"
+  },
+  "recommendations": [
+    "Continue maintaining current spending patterns",
+    "Consider increasing emergency fund by 10%",
+    "Optimize credit card usage for better rewards"
+  ]
+}
 
-Take finance quizzes
 
-Earn reward points or badges
+This proves real-world scalability and B2B potential for integration.
 
-Unlock new financial lessons
+6️⃣ Financial Literacy Gamification
 
-Encourages financial awareness among youth and first-time users.
+10–12 question interactive finance quiz 🧠
 
-🔹 6. Open Banking & SaaS Layer
+Points, badges & leaderboards for engagement
 
-A mock API integration panel to demonstrate:
+Responses stored locally (JSON/localStorage)
 
-How FinSphere can connect with banks or NBFCs
-
-Secure and open financial data exchange
-
-🧠 Bonus Integrations (for Top Teams)
-
-🎙️ Voice assistant (English + Hindi)
-
-🤖 Multi-agent AI system for credit + risk + investment modules
-
-📊 Data visualization using Chart.js / Recharts
-
-🪪 Decentralized identity (DID) demo
+Boosts user education and retention
 
 🧰 Tech Stack
-Layer	Technologies Used
-Frontend	React.js , Tailwind CSS
-Backend	Node.js, Express
-Database	MongoDB 
-AI & ML	OpenAI / Hugging Face APIs, scikit-learn 
-Visualization	Chart.js / Recharts
-UI/UX	Responsive, animated dark theme with neon gradients
-🧩 System Architecture
+Layer	Tools & Frameworks
+Frontend	React + Tailwind CSS
+Backend	Python (FastAPI)
+AI Models	Hugging Face Transformers (DistilBERT/BERT-base-uncased)
+Data Storage	JSON / localStorage (mock), Supabase (SaaS API)
+Security	Secure local storage, mock data encryption
+APIs	Open Banking API, SaaS /finance-insights, OpenAI/Gemini (fraud detection)
+🧩 Project Highlights
 
-Frontend (React.js) — User Dashboard, Chatbot, Visualization
+Explainable AI Credit Scoring (XAI)
 
-Backend API (Node.js/Express) — Handles credit scoring logic and data
+AI Chatbot Mentor (Multilingual)
 
-AI Layer — Chatbot and ML model integration
+SaaS API for Financial Insights
 
-Database — Stores simulated financial data
+Fraud Detection via Text Classification
 
-Visualization Layer — Shows insights and analytics
+Dynamic Personal Finance Dashboard
 
-🏁 Impact
+Financial Literacy Gamification Zone
 
-✅ Enables financial access for unbanked users
-✅ Promotes financial literacy and inclusion
-✅ Detects risk and fraud early using AI
-✅ Builds trust between users and digital finance systems
-Fully responsive and PWA-ready
+Mock Secure User Login/Signup
 
-Accessibility-first design
+Local Data Encryption Simulation
+
+
+🚀 Future Enhancements
+
+Real-time UPI or SMS data ingestion
+
+Blockchain-based KYC validation
+
+Multilingual Voice Assistant
+
+Carbon-neutral transaction tracking (FinTech + Sustainability)
+
+DID (Decentralized Identity) integration
+
